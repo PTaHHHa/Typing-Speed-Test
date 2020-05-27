@@ -2,6 +2,7 @@ import random
 import datetime
 import difflib
 
+
 print('Typing Speed Test')
 with open('file.txt', 'r') as file:
     text = file.read()
@@ -22,5 +23,6 @@ if user_input != random_sentence:
     print("Your sentence doesn't match with given sentence")
 diff = difflib.SequenceMatcher(None, user_input, random_sentence).ratio()
 
-print('\nTime: ', time_stop-time_start)
+total_time = abs(time_stop - time_start).seconds
+print(f'\nTime: {total_time} sec.')
 print(f'Similarity: {diff*100}%')
